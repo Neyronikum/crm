@@ -1,0 +1,112 @@
+<header class="main-header">
+    <a href="index.php" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><img src="img/logo_50x50.png" alt=""></span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><img src="img/Logo_реаbw(152p).png"></span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <li class="dropdown notifications-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i style="line-height: 50px" class="fa fa-bell"></i>
+            </a>
+            <ul class="dropdown-menu scale-up">
+              <li class="header">You have 7 notifications</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;"><ul class="menu inner-content-div" style="overflow: hidden; width: auto; height: 200px;">
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-users text-aqua"></i> Curabitur id eros quis nunc suscipit blandit.
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-user text-red"></i> Nullam euismod dolor ut quam interdum, at scelerisque ipsum imperdiet.
+                    </a>
+                  </li>
+                </ul><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 136.054px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+              </li>
+              <li class="footer"><a href="#">View all</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+<aside class="main-sidebar">
+    <section class="sidebar">
+      <div class="user-panel">
+        <div class="image float-left">
+          <img src="img/user.png" class="rounded-circle" alt="User Image">
+        </div>
+        <div class="info float-left">
+          <p><?echo $_SESSION['name'];?></p>
+          <a><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+      <ul class="sidebar-menu" data-widget="tree"> 
+      <? if($_SESSION['status'] > 1) echo (       
+        '<li>
+          <a href="#new_task">
+            <i class="fa fa-dashboard"></i> <span>Новая задача</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>'); ?>
+        <? if($_SESSION['status'] >= 8) echo (
+          '<li>
+          <a href="add_worker.php">
+            <i class="fa fa-dashboard"></i> <span>Новый сотрудник</span>
+            <span class="pull-right-container">
+              </span>
+          </a>
+        </li>'); ?>
+        <li>
+          <a href="#add_contragents">
+            <i class="fa fa-files-o"></i>
+            <span>Добавить контрагента</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>  
+        <li>
+        <li>
+          <a href="#new_sale">
+            <i class="fa fa-files-o"></i>
+            <span>Новая продажа</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>  
+        <li>
+          <a href="#new_sale">
+            <i class="fa fa-files-o"></i>
+            <span>Мои продажи</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li> 
+        <li>
+          <a href="#task_table">
+            <i class="fa fa-files-o"></i>
+            <span>Список задач</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>      
+        
+      </ul>
+    </section>
+    <div class="sidebar-footer">
+		<a href="logout.php" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="fa fa-power-off"></i></a>
+	</div>
+  </aside>

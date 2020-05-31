@@ -1,0 +1,40 @@
+<div class="col-xl-3 col-lg-6 col-md-6 col-xs-12">
+
+    <div class="box box-default" id="new_sale">
+        <div class="box-header with-border">
+            <h3 class="box-title">Создать контакт</h3>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+            </div>
+        </div>
+        <div class="box-body">
+            <form id="blueprint" role="form">
+                <div class="input-group margin">
+                    <select name="contragent_to_convers" id="contragent_to_convers" class="form-control selectpicker" data-title="Выберите контрагента"  data-live-search="true">
+
+                    </select>
+                    <span class="">
+                        <button class="btn btn-info btn-flat btn-sm" data-toggle="modal" data-target="#addContragentModal">Добавить</button>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <textarea name="description" id="description" cols="30" rows="3" class="form-control" placeholder="Описание"></textarea>
+                </div>
+                <div class="form-group">
+                    <textarea name="conversation_reason" id="conversation_reason" cols="30" rows="3" class="form-control" placeholder="Причина обращения"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="date_control">Дата контроля</label>
+                    <input class="form-control" type="date" id="date_control" name="date_control">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="checkbox" id="isClosed" name="isClosed">
+                    <label for="isClosed">Заявка закрыта</label>
+                </div>
+                <button type="submit" class="btn btn-primary" >Добавить</button>
+            </form>
+        </div>
+    </div>
+</div>

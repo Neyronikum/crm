@@ -1,0 +1,42 @@
+<div class="modal fade" id="editBlueprintModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Редактировать контакт</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="blueprint" role="form">
+                <div class="modal-body">
+                    <div class="input-group margin">
+                        <select name="contragent_to_convers" id="contragent_to_convers" class="form-control selectpicker" data-title="Выберите контрагента"  data-live-search="true">
+
+                        </select>
+                        <span class="">
+                        <button class="btn btn-info btn-flat btn-sm" data-toggle="modal" data-target="#addContragentModal">Добавить</button>
+                    </span>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="description" id="description" cols="30" rows="3" class="form-control" placeholder="Описание"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="conversation_reason" id="conversation_reason" cols="30" rows="3" class="form-control" placeholder="Причина обращения"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="date_control">Дата контроля</label>
+                        <input class="form-control" type="date" id="date_control" name="date_control">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="checkbox" id="isClosed" name="isClosed">
+                        <label for="isClosed">Заявка закрыта</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                    <button type="submit" class="btn btn-primary">Добавить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

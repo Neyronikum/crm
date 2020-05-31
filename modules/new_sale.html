@@ -1,0 +1,116 @@
+<div class="col-xl-3 col-lg-6 col-md-6 col-xs-12">
+     		
+	<div class="box box-default" id="new_sale">
+	    <div class="box-header with-border">
+	      	<h3 class="box-title">Добавить продажу</h3>
+
+	      	<div class="box-tools pull-right">
+	            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+	            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+	      	</div>
+        </div>
+        <div class="box-body">
+          <form id="sale" role="form" method="POST">
+          	<div class="form-group">
+          		<label for="contragent">Контрагент</label>
+          		<select id="contragent" name="contragent_id" class="form-control selectpicker"  data-live-search="true">
+    
+          		</select>
+          	</div>
+          	<div class="row">
+          		<div class="col-md-6">
+          		<div class="form-group">
+          		<label for="realization">Реализация</label>          		
+          		<input type="text" name="realization" id="realization" class="form-control" required>          		
+          	</div>
+          	</div>
+          	<div class="col-md-6">
+          		<div class="form-group">
+          		<label for="purchase">Закуп</label>          		
+          		<input type="text" name="purchase" id="purchase" class="form-control" required>      		
+          	</div>
+          	</div>
+          </div>
+          	<div class="row">
+          		
+          		<div class="col-md-6">
+          			<div class="form-group">
+	          		<label for="pay">Оплата</label>          		
+	          		<input type="text" name="pay" id="pay" class="form-control">          		
+	          	</div>
+	          	<div class="form-group">
+	          		<label for="payment_delay">Отсрочка</label>          		
+	          		<input type="text" name="payment_delay" id="payment_delay" class="form-control">
+	          	
+	          		</div>
+	          	</div>
+	          	<div class="col-md-6">
+          			<div class="form-group">
+	              <div class="radio">
+	              	  <input name="NDS" type="radio" id="NDS" checked="" value="1">
+					  <label for="NDS">НДС 20%</label>                    
+	              </div>
+	              <div class="radio">
+	              	  <input name="NDS" type="radio" id="noNDS" value="2">
+					  <label for="noNDS">Без НДС</label>   
+	              </div>
+	              <div class="radio">
+	              	  <input name="NDS" type="radio" id="cash" value="3">
+					  <label for="cash">Наличные</label> 
+	              </div>
+          		</div>
+          		</div>
+            </div>
+            <div class="row">
+            	<div class="col-md-6">
+            		<div class="form-group">
+		          		<label for="weight">Вес груза</label>          		
+		          		<input type="text" name="weight" id="weight" class="form-control" required> 
+		          	</div>
+            	</div>
+            	<div class="col-md-6">
+            		<div class="form-group">
+		          		<label for="commission">Комиссия</label>          		
+		          		<input type="text" name="commission" id="commission" class="form-control">  
+		          	</div>
+            	</div>
+            </div>
+          	
+          	
+          	<input type="hidden" name="profit">
+          	<input type="hidden" name="NDSOut">
+          	<input type="hidden" name="NDSIn">
+          	<input type="hidden" name="NDSToPay">
+          	<input type="hidden" name="logisticOutside">
+          	<input type="hidden" name="logisticInside">
+          	<input type="hidden" name="taxBase">
+          	<input type="hidden" name="taxProfit">
+          	<input type="hidden" name="cleanProfit">
+          	<input type="hidden" name="reward">
+          	<input type="hidden" name="profitability">
+
+            <!-- data-toggle="modal" data-target="#sale_add" -->
+	        <button type="submit" class="btn btn-primary" >Добавить</button>
+
+	      </form>
+	      <div class="modal" id="sale_add" tabindex="-1" role="dialog">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title">Поздравляю</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+			        <p>Продажа добавлена успешно</p>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+	    </div>
+	</div>		
+</div>
