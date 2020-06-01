@@ -11,4 +11,3 @@ if (!$link) {
     file_put_contents("sql_errors.txt", "Текст ошибки error: " . mysqli_connect_error() . PHP_EOL);
     exit;
 }
-?>

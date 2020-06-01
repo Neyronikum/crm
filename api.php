@@ -292,6 +292,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
             $itog['salary_base'] = $salary['salary_base'];
         }
 
+        array_walk($itog, function(&$val){
+            $val = number_format($val, 2, ".", " ");
+        });
+
         echo json_encode($itog, JSON_NUMERIC_CHECK);
         exit();
     }

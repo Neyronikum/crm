@@ -12,7 +12,7 @@
         <div class="box-body">
             <form id="sale" role="form" method="POST">
             <div class="row">
-              <div class="col-6">
+              <div class="col-12">
                   <div class="input-group margin">
                       <select id="contragent" name="contragent_id" class="form-control selectpicker" data-title="Выберите контрагента"  data-live-search="true">
                       </select>
@@ -110,14 +110,14 @@
                               <input placeholder="Расстояние" type="number" name="distance" id="distance" class="form-control" required>
                           </div>
                       </div>
-                      <div class="col-md-6">
-                          <div class="form-group">
-                              <select name="car" id="car" class="form-control" required>
-                                  <option value="" disabled selected>Выберите машину</option>
-
-                              </select>
-                          </div>
-                      </div>
+<!--                      <div class="col-md-6">-->
+<!--                          <div class="form-group">-->
+<!--                              <select name="car" id="car" class="form-control" required>-->
+<!--                                  <option value="" disabled selected>Выберите машину</option>-->
+<!---->
+<!--                              </select>-->
+<!--                          </div>-->
+<!--                      </div>--><!---->
                   </div>
                   <div class="row">
                       <div class="col-12">
@@ -127,40 +127,7 @@
                       </div>
                   </div>
               </div>
-              <div class="col-6">
-                  <div class="input-group margin">
-                      <select id="products" name="products" class="form-control selectpicker" data-title="Выберите товар"  data-live-search="true">
-                      </select>
-                      <span class="">
-                          <button class="btn btn-warning btn-flat btn-sm" data-toggle="modal" data-target="#addContragentModal">Добавить</button>
-                      </span>
-                  </div>
-                  <table id="add_products_table" class="table table-bordered table-hover display nowrap margin-top-10 table-responsive table-striped dataTable">
-                      <thead>
-                          <tr>
-                              <th>№</th>
-                              <th>Название</th>
-                              <th>Цена</th>
-                              <th>Количество</th>
-                              <th>Стоимость</th>
-                              <th></th>
-                          </tr>
-                      </thead>
-                      <tbody>
 
-                      </tbody>
-                      <tfoot>
-                      <tr>
-                          <th colspan="2">Итого:</th>
-
-                          <th>Цена</th>
-                          <th>Количество</th>
-                          <th colspan="2">Стоимость</th>
-
-                      </tr>
-                      </tfoot>
-                  </table>
-              </div>
             </div>
             <div class="row">
               <div class="col-12">

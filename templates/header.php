@@ -70,27 +70,21 @@
             </span>
           </a>
       </li>
+
       <li>
-          <a href="#" data-module="modules/blueprint.html">
-              <i class="fa fa-dashboard"></i> <span>планировщик</span>
-              <span class="pull-right-container">
-        </span>
+          <a href="#" data-module="modules/sales_table.php">
+              <i class="fa fa-dashboard"></i> <span>Таблица продаж</span>
+              <span class="pull-right-container"></span>
           </a>
       </li>
-          <li>
-              <a href="#" data-module="modules/blueprints_table.php">
-                  <i class="fa fa-dashboard"></i> <span>Таблица конверсий</span>
-                  <span class="pull-right-container">
-        </span>
-              </a>
-          </li>
-          <li>
-              <a href="#" data-module="modules/sales_table.php">
-                  <i class="fa fa-dashboard"></i> <span>Таблица продаж</span>
-                  <span class="pull-right-container">
-        </span>
-              </a>
-          </li>
+          <? if($_SESSION['status'] > 8) echo (
+          '<li>
+          <a href="#" data-module="modules/worker_profit.php">
+            <i class="fa fa-dashboard"></i> <span>Расчёт зарплаты</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>'); ?>
       </ul>
     </section>
     <div class="sidebar-footer">

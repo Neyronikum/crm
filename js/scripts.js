@@ -1,68 +1,68 @@
 function init(){
-	class AddProducts {
-		constructor(elem) {
-			//this._elem = elem;
-			elem.onchange = this.onChange.bind(this); // (*)
-		}
-
-		cost(parentElem){
-			let price = parentElem.querySelector('[data-product="price"]').value;
-			let amount = parentElem.querySelector('[data-product="amount"]').value;
-			parentElem.querySelector('[data-product="cost"]').value = price * amount;
-
-			//parentElem.parentElement.querySelector('tfoot tr').nodeValue('asdfas');
-		}
-
-		price(target) {
-			this.cost(target.parentElement.parentElement)
-		}
-
-		amount(target) {
-			this.cost(target.parentElement.parentElement)
-		}
-
-		onChange(event) {
-			let action = event.target.dataset.product;
-			if (action) {
-				this[action](event.target);
-			}
-
-		};
-	}
-
-	let target = document.getElementById('add_products_table');
-
-// Конфигурация observer (за какими изменениями наблюдать)
-	const config = {
-		attributes: true,
-		childList: true,
-		subtree: true
-	};
-
-// Функция обратного вызова при срабатывании мутации
-	const obsFunc = function(mutationsList, observer) {
-		for (let mutation of mutationsList) {
-			if (mutation.type === 'childList') {
-				console.log('A child node has been added or removed.');
-			}
-		}
-		alert('qwe');
-	};
+// 	class AddProducts {
+// 		constructor(elem) {
+// 			//this._elem = elem;
+// 			elem.onchange = this.onChange.bind(this); // (*)
+// 		}
+//
+// 		cost(parentElem){
+// 			let price = parentElem.querySelector('[data-product="price"]').value;
+// 			let amount = parentElem.querySelector('[data-product="amount"]').value;
+// 			parentElem.querySelector('[data-product="cost"]').value = price * amount;
+//
+// 			//parentElem.parentElement.querySelector('tfoot tr').nodeValue('asdfas');
+// 		}
+//
+// 		price(target) {
+// 			this.cost(target.parentElement.parentElement)
+// 		}
+//
+// 		amount(target) {
+// 			this.cost(target.parentElement.parentElement)
+// 		}
+//
+// 		onChange(event) {
+// 			let action = event.target.dataset.product;
+// 			if (action) {
+// 				this[action](event.target);
+// 			}
+//
+// 		};
+// 	}
+//
+// 	let target = document.getElementById('add_products_table');
+//
+// // Конфигурация observer (за какими изменениями наблюдать)
+// 	const config = {
+// 		attributes: true,
+// 		childList: true,
+// 		subtree: true
+// 	};
+//
+// // Функция обратного вызова при срабатывании мутации
+// 	const obsFunc = function(mutationsList, observer) {
+// 		for (let mutation of mutationsList) {
+// 			if (mutation.type === 'childList') {
+// 				console.log('A child node has been added or removed.');
+// 			}
+// 		}
+// 		alert('qwe');
+// 	};
 
 // Создаем экземпляр наблюдателя с указанной функцией обратного вызова
-	const observer = new MutationObserver(obsFunc);
-
-
-
-
-
-	if (typeof add_products_table != "undefined") new AddProducts(add_products_table);
-
-	const addProductInit = {
-		"initComplete": function () {
-
-		}
-	};
+// 	const observer = new MutationObserver(obsFunc);
+//
+//
+//
+//
+//
+// 	if (typeof add_products_table != "undefined") new AddProducts(add_products_table);
+//
+// 	const addProductInit = {
+// 		"initComplete": function () {
+//
+// 		}
+// 	};
 	/*Русификатор для Datatable */
 	const dataTableRus = {
 		language: {
@@ -81,7 +81,7 @@ function init(){
 		}
 	};
 
-	let addProductTable = $('#add_products_table').DataTable(Object.assign(addProductInit, dataTableRus));
+	//let addProductTable = $('#add_products_table').DataTable(Object.assign(addProductInit, dataTableRus));
 
 	$('#products').change(function(){
 		let price = `<input class="table-input price" data-product="price" type="number" value="${this.options[this.selectedIndex].dataset.price}">`;
@@ -206,7 +206,7 @@ function init(){
 				$('#realizationPlan').val(data.realization_plan);
 				$('#salaryBase').val(data.salary_base);
 				$('#salaryProfit').val(data.salary_profit);
-				$('#salaryPayable').val(data.salary_payable);
+				$('#salaryPayable').val(data.salary_payable.toFixed(2));
 				$('#rewardSum').val(data.reward);
 				$('#finResult').val(data.fin_result);
 				$('#grossMargin').val(data.gross_margin * 100 + '%');
@@ -508,7 +508,7 @@ function init(){
 
 		return dd + '.' + mm + '.' + yy;
 	}
-	/** Вывод типа контрагента в зависимости от от численного типа  */
+	/** Вывод типа контрагента от выбора радиобатона  */
 	function contragentType(type){
 		switch (type) {
 			case 1: return 'НДС'; break;
@@ -724,7 +724,7 @@ function init(){
 		let distance = this.distance.value;
 		let logisticInsideSelect = $("input[name='logisticInsideSelect']:checked").data('value'); // Выбор варианта доставки
 		//let car = this.car.value;
-		let consumption = this.car.options[this.car.selectedIndex].dataset.consumption;
+		//let consumption = this.car.options[this.car.selectedIndex].dataset.consumption;
 		profit = realization - purchase;
 		if (NDS == 1) NDSOut = realization - (realization / 1.2)
 		else NDSOut = 0;
@@ -734,7 +734,7 @@ function init(){
 		logisticOutside = weight * 6;
 		//logisticInside = realization / 100;   //Упрощённая система расчёта внешней логистики
 		switch (logisticInsideSelect) {
-			case 1: logisticInside = consumption/100 * distance * 2 * 45.5; break;
+			case 1: logisticInside = 0.12 * distance * 2 * 45.5; break;
 			case 2: logisticInside = 0; break;
 			case 3: logisticInside = $('#specialCalc').val(); break;
 		}
@@ -762,7 +762,7 @@ function init(){
 		this.cleanProfit.value = cleanProfit;
 		this.reward.value = reward;
 		this.profitability.value = profitability;
-		this.fuel_consumption.value = consumption;
+		//this.fuel_consumption.value = consumption;
 		let dataset = $(this).serialize();
 		$.ajax({
 			type: 'POST',

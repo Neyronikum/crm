@@ -14,13 +14,19 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
+
                                     <label for="whoIs">Работник</label>
                                     <select name="whoIs" id="whoIs" class="form-control" required>
                                         <option selected disabled>Не выбрано</option>
-                                        <?php
+                                        <?
+                                        require_once ("../connect.php");
+                                        ini_set('display_errors', 1);
+                                        ini_set('display_startup_errors', 1);
+                                        error_reporting(E_ALL);
                                         $query = "SELECT * FROM `workers`";
                                         $result = mysqli_query($link, $query);
                                         while ($user = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                                            print_r($user);
                                             echo "<option value='${user['worker_id']}'>${user['firstname']} ${user['lastname']}</option>";
                                         };
                                         ?>
