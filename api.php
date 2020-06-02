@@ -277,8 +277,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
             }
             $itog['salary_payable'] = $itog['salary_profit'] - $itog['spending'];
             $itog['fin_result'] = $itog['realization_sum'] - $itog['salary_profit'] - $itog['FOT_tax'];
-            $itog['gross_margin'] = $itog['realization_sum'] <> 0 ? $itog['fin_result'] / $itog['realization_sum']:0;
-            $itog['return_of_investment'] = $itog['pay_sum'] <> 0 ? ($itog['profit_sum'] + $itog['realization_sum'] - $itog['pay_sum']) / $itog['pay_sum']: 0;
+            $itog['gross_margin'] = $itog['realization_sum'] <> 0 ? $itog['fin_result'] / $itog['realization_sum'] * 100:0;
+            $itog['return_of_investment'] = $itog['pay_sum'] <> 0 ? ($itog['profit_sum'] + $itog['realization_sum'] - $itog['pay_sum']) / $itog['pay_sum'] * 100: 0;
             //$itog[''] ='';
 
         } else {

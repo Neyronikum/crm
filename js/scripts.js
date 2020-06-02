@@ -209,8 +209,8 @@ function init(){
 				$('#salaryPayable').val(data.salary_payable.toFixed(2));
 				$('#rewardSum').val(data.reward);
 				$('#finResult').val(data.fin_result);
-				$('#grossMargin').val(data.gross_margin * 100 + '%');
-				$('#returnOfInvestment').val(data.return_of_investment * 100 + '%');
+				$('#grossMargin').val(data.gross_margin + '%');
+				$('#returnOfInvestment').val(data.return_of_investment + '%');
 				$('#clientsPlanMotivation').val(data.clients_plan_motivation);
 			}
 		});
