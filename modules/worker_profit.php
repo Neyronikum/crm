@@ -27,6 +27,7 @@
                                         $result = mysqli_query($link, $query);
                                         while ($user = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                                             print_r($user);
+                                            if ($user['isManager'] == 1)
                                             echo "<option value='${user['worker_id']}'>${user['firstname']} ${user['lastname']}</option>";
                                         };
                                         ?>
@@ -36,7 +37,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="month">Месяц</label>
-                                    <input value="2019-09" id="month" type="month" name="month" class="form-control">
+                                    <input value="<? echo (date('Y-m')); ?>" id="month" type="month" name="month" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-4">

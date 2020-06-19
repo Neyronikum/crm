@@ -11,7 +11,7 @@ if (empty($_SESSION['auth']) or $_SESSION['auth'] == false) {
 		// $user = $result->fetch_assoc();
 		$user = mysqli_fetch_array($result, MYSQLI_ASSOC);
 		
-		if (!empty($user)) {
+		if (!empty($user) && $key === $user['cookie']) {
 			session_start();
 			$_SESSION['auth'] = true;
 			$_SESSION['id'] = $user['worker_id'];
@@ -21,7 +21,8 @@ if (empty($_SESSION['auth']) or $_SESSION['auth'] == false) {
 			
 
 		} else {
-			echo "SQL вернула пустой результат";
+			echo "Сессия устарела";
+            header ("Location: login.php");
 		}
 	} else {
 		header ("Location: login.php");

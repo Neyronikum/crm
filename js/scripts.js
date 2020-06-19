@@ -206,11 +206,11 @@ function init(){
 				$('#realizationPlan').val(data.realization_plan);
 				$('#salaryBase').val(data.salary_base);
 				$('#salaryProfit').val(data.salary_profit);
-				$('#salaryPayable').val(data.salary_payable.toFixed(2));
+				$('#salaryPayable').val(data.salary_payable);
 				$('#rewardSum').val(data.reward);
 				$('#finResult').val(data.fin_result);
-				$('#grossMargin').val(data.gross_margin + '%');
-				$('#returnOfInvestment').val(data.return_of_investment + '%');
+				$('#grossMargin').val(data.gross_margin?data.gross_margin + '%':'');
+				$('#returnOfInvestment').val(data.return_of_investment?data.return_of_investment + '%':'');
 				$('#clientsPlanMotivation').val(data.clients_plan_motivation);
 			}
 		});

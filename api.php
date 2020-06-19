@@ -400,5 +400,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
         echo json_encode($blueprints, JSON_NUMERIC_CHECK);
     }
 
+
+    /*  workers CRUD      */
+    if ($_POST['add_worker']) {
+        $id = $_POST['id'];
+        $name = $_POST['name'];
+        $midname = $_POST['midname'];
+        $lastname = $_POST['id'];
+        $status = $_POST['status'];
+        $login = $_POST['login'];
+        $pass = $_POST['pass'];
+
+        $query = "INSERT INTO `workers` (firstname, midname, lastname, login, password, status) VALUES('${name}', '${midname}', '${lastname}', '${login}', '${pass}', ${status})"
+
+    }
 }
+
 ?>

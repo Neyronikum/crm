@@ -77,10 +77,18 @@
               <span class="pull-right-container"></span>
           </a>
       </li>
-          <? if($_SESSION['status'] > 8) echo (
+          <? if($_SESSION['status'] > 7) echo (
           '<li>
           <a href="#" data-module="modules/worker_profit.php">
             <i class="fa fa-dashboard"></i> <span>Расчёт зарплаты</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>'); ?>
+          <? if($_SESSION['status'] > 7) echo (
+          '<li>
+          <a href="#" data-module="modules/workers.php">
+            <i class="fa fa-dashboard"></i> <span>Сотрудники</span>
             <span class="pull-right-container">
             </span>
           </a>
